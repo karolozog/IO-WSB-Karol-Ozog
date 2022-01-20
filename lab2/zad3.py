@@ -67,4 +67,12 @@ if __name__ == "__main__":
     #wykres
     plt.figure()
     plt.scatter(X[:, 0], X[:, 1], c=y, cmap=cmap, edgecolor="k", s=20)
+    # oś x
+    plt.xlabel('wysokość')
+    # oś y
+    plt.ylabel('szerokość')
+    # tytuł
+    plt.title('Klasyfikacja KNN Irysów')
     plt.show()
+
+
