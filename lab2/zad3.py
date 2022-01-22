@@ -51,12 +51,27 @@ if __name__ == "__main__":
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.7, random_state=1
     )
-    #określanie ilości "najbliższych sąssiadów k"
-    k = 5
+     
+      #określanie ilości "najbliższych sąssiadów k= 3"
+    k = 3
     clf = KNN(k=k)
     clf.fit(X_train, y_train)
     predictions = clf.predict(X_test)
     print("Klasyfikacja KNN przy", k, "najbliższych sąsiadach wynosi: ", accuracy(y_test, predictions), "%")
+
+    # określanie ilości "najbliższych sąssiadów k = 5"
+    i = 5
+    clf = KNN(k=k)
+    clf.fit(X_train, y_train)
+    predictions = clf.predict(X_test)
+    print("Klasyfikacja KNN przy", i, "najbliższych sąsiadach wynosi: ", accuracy(y_test, predictions), "%")
+
+    # określanie ilości "najbliższych sąssiadów k = 11"
+    j = 11
+    clf = KNN(k=k)
+    clf.fit(X_train, y_train)
+    predictions = clf.predict(X_test)
+    print("Klasyfikacja KNN przy", j, "najbliższych sąsiadach wynosi: ", accuracy(y_test, predictions), "%")
 
 
     # macierz błędu
