@@ -58,7 +58,7 @@ if __name__ == "__main__":
     )
 
     # określanie ilości "najbliższych sąssiadów k= 3. Żeby otrzymać metodę k-NN dla 5 lub 11 sąsiadów za k podstawiamy kolejno 5 lub 11 "
-    k = 11
+    k = 3
     clf = KNN(k=k)
     clf.fit(X_train, y_train)
     predictions = clf.predict(X_test)
