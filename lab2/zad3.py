@@ -3,9 +3,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.metrics import confusion_matrix
 
+
 # odległość eukialidedowa
 def euclidean_distance(x1, x2):
     return np.sqrt(np.sum((x1 - x2) ** 2))
+
 
 class KNN:
     def __init__(self, k=3):
@@ -30,6 +32,7 @@ class KNN:
         most_common = Counter(k_neighbor_labels).most_common(1)
         return most_common[0][0]
 
+
 if __name__ == "__main__":
     # Imports
     from matplotlib.colors import ListedColormap
@@ -39,10 +42,12 @@ if __name__ == "__main__":
     # kolory na wykresie
     cmap = ListedColormap(["#FF0000", "#00FF00", "#0000FF"])
 
+
     # dokładność
     def accuracy(y_true, y_pred):
         accuracy = np.sum(y_true == y_pred) / len(y_true)
         return accuracy
+
 
     iris = datasets.load_iris()
     X, y = iris.data, iris.target
@@ -74,22 +79,3 @@ if __name__ == "__main__":
     # tytuł
     plt.title('Klasyfikacja KNN Irysów')
     plt.show()
-
-
-    # macierz błędu
-    cf = confusion_matrix(y_test, predictions)
-    print("macierz błędu to:")
-    print(cf)
-
-    #wykres
-    plt.figure()
-    plt.scatter(X[:, 0], X[:, 1], c=y, cmap=cmap, edgecolor="k", s=20)
-    # oś x
-    plt.xlabel('wysokość')
-    # oś y
-    plt.ylabel('szerokość')
-    # tytuł
-    plt.title('Klasyfikacja KNN Irysów')
-    plt.show()
-
-
